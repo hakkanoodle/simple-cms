@@ -1,0 +1,20 @@
+<#escape x as x?html>
+<!DOCTYPE html>
+<@pp.renameOutputFile extension="html" />
+<#assign page1 = pp.doc.page1>
+<#assign activenav = page1.activenav>
+<html>
+  <head>
+    <title>${page1.title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <#include "nav.html">
+    <h1>${page1.header}</h1>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
+</#escape>

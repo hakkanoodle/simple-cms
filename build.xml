@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="Build Website">
+
+  <path id="fmpplibs.path">
+    <fileset dir="lib" includes="**/*.jar"/>
+  </path>
+
+  <taskdef name="fmpp" classname="fmpp.tools.AntTask" classpathref="fmpplibs.path"/>
+  
+  <target name="generate">
+    <fmpp srcdir="src" 
+          destdir="out" 
+          sourceEncoding="UTF-8"
+          logFile="logs/out.log"
+          appendLogFile="true">
+      <modes>
+        [
+          ignore(templates/**/*)
+          copy(css/*,js/*)          
+        ]
+      </modes>
+      <xmlRenderings>
+        [
+          { 
+            ifDocumentElementIs: page1
+            template: templates/page1.html
+          }            
+        ]
+      </xmlRenderings>  
+    </fmpp>                           
+  </target>
+  
+  <target name="clean">
+    <delete file="logs/out.log"/>
+    <delete dir="out"/>
+  </target>
+</project>

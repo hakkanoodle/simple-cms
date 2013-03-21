@@ -1,0 +1,25 @@
+<#if activenav = "home">
+  <#assign homeclass=" class=\"active\"">
+<#else>
+  <#assign homeclass="">
+</#if>
+<#if activenav = "about">
+  <#assign aboutclass=" class=\"active\"">
+<#else>
+  <#assign aboutclass="">
+</#if>
+<#if activenav = "contact">
+  <#assign contactclass=" class=\"active\"">
+<#else>
+  <#assign contactclass="">
+</#if>
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="index.html">FMPP Sites</a>
+    <ul class="nav">
+      <li${homeclass}><a href="index.html">Home</a></li>
+      <li${aboutclass}><a href="about.html">About Us</a></li>
+      <li${contactclass}><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+</div>
